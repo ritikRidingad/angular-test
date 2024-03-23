@@ -1,17 +1,15 @@
-<div class="bg-primary">
-  <ngx-typed-js
-    [strings]="typedOptions_2"
-    [loop]="true"
-    [backSpeed]="100"
-    [backDelay]="500"
-    [fadeOutDelay]="500"
-    [typeSpeed]="100"
-  >
-  
-    <h1 class="text-light subheading pb-4 text-[25px] max-sm:text-[30px]">
-      <span class="typing text-[45px]"></span>
-    </h1>
-  </ngx-typed-js>
+<div class="w-full bg-primary flex justify-center h-[500px] items-center">
+  <div class="w-[450px] h-[450px]">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let data of imageData">
+        <ng-template carouselSlide [id]="data.id">
+          <img [src]="data?.img" class="object-contain" [alt]="data?.img" />
+          <!-- <div class="w-[450px] flex">
+          </div> -->
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
